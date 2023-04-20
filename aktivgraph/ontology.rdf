@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://dhp.lbg.ac.at/aktivplan/aktivgraph#"
+     xml:base="https://dhp.lbg.ac.at/aktivplan/aktivgraph"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:aktivplan="https://dhp.lbg.ac.at/aktivplan/">
+    <owl:Ontology rdf:about="https://dhp.lbg.ac.at/aktivplan/aktivgraph">
+        <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
+        <vann:preferredNamespacePrefix>ag</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://dhp.lbg.ac.at/aktivplan/"/>
+        <rdfs:comment xml:lang="en">Part of the Master&apos;s thesis by Wolfgang Kremser (wolfgang.kremser@salzburgresearch.at)</rdfs:comment>
+        <rdfs:label xml:lang="en">Aktivgraph</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- https://schema.org/isPartOf -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/isPartOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hosts -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hosts">
+        <owl:equivalentProperty rdf:resource="https://dhp.lbg.ac.at/aktivplan/hosts-actuator"/>
+        <owl:equivalentProperty rdf:resource="https://dhp.lbg.ac.at/aktivplan/hosts-sampler"/>
+        <owl:equivalentProperty rdf:resource="https://dhp.lbg.ac.at/aktivplan/hosts-sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/hosts-actuator -->
+
+
+    <owl:ObjectProperty rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-actuator">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Actuator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/hosts-sampler -->
+
+
+    <owl:ObjectProperty rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-sampler">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sampler"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/hosts-sensor -->
+
+
+    <owl:ObjectProperty rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-sensor">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/aktivplan-id -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dhp.lbg.ac.at/aktivplan/aktivplan-id">
+        <rdfs:domain rdf:resource="https://schema.org/Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Aktivplan ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/hosts-actuator -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-actuator">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/hosts-sampler -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-sampler">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/hosts-sensor -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-sensor">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://openweathermap.org/api/one-call-3#hasWeather -->
+
+
+    <owl:DatatypeProperty rdf:about="https://openweathermap.org/api/one-call-3#hasWeather">
+        <rdfs:domain rdf:resource="https://openweathermap.org/api/one-call-3#Weather"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/116154003 -->
+
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/116154003">
+        <owl:equivalentClass rdf:resource="https://schema.org/Patient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#ProperInterval -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#ProperInterval">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasBeginning"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Instant"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasEnd"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Instant"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Actuator -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Actuator">
+        <rdfs:comment xml:lang="en">A device that is used by, or implements, an (Actuation) Procedure that changes the state of the world.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">Actuator</rdfs:label>
+        <skos:definition xml:lang="en">A device that is used by, or implements, an (Actuation) Procedure that changes the state of the world.</skos:definition>
+        <skos:example xml:lang="en">A window actuator for automatic window control, i.e., opening or closing the window.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Platform -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Platform">
+        <rdfs:comment xml:lang="en">A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">Platform</rdfs:label>
+        <skos:definition xml:lang="en">A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms.</skos:definition>
+        <skos:example xml:lang="en">A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sampler -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sampler">
+        <rdfs:comment xml:lang="en">A device that is used by, or implements, a Sampling Procedure to create or transform one or more samples.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">Sampler</rdfs:label>
+        <skos:definition xml:lang="en">A device that is used by, or implements, a Sampling Procedure to create or transform one or more samples.</skos:definition>
+        <skos:example xml:lang="en">A ball mill, diamond drill, hammer, hypodermic syringe and needle, image Sensor or a soil auger can all act as sampling devices (i.e., be Samplers). However, sometimes the distinction between the Sampler and the Sensor is not evident, as they are packaged as a unit. A Sampler need not be a physical device.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <rdfs:comment xml:lang="en">Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">Sensor</rdfs:label>
+        <skos:definition xml:lang="en">Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.</skos:definition>
+        <skos:example xml:lang="en">Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/tailoring-variable -->
+
+
+    <owl:Class rdf:about="https://dhp.lbg.ac.at/aktivplan/tailoring-variable"/>
+    
+
+
+    <!-- https://openweathermap.org/api/one-call-3#Weather -->
+
+
+    <owl:Class rdf:about="https://openweathermap.org/api/one-call-3#Weather"/>
+    
+
+
+    <!-- https://schema.org/MedicalAudience -->
+
+
+    <owl:Class rdf:about="https://schema.org/MedicalAudience"/>
+    
+
+
+    <!-- https://schema.org/Patient -->
+
+
+    <owl:Class rdf:about="https://schema.org/Patient">
+        <rdfs:subClassOf rdf:resource="https://schema.org/MedicalAudience"/>
+        <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
+        <rdfs:comment>A patient is any person recipient of health care services.</rdfs:comment>
+        <rdfs:label>Patient</rdfs:label>
+        <schema:isPartOf rdf:resource="https://health-lifesci.schema.org"/>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Person -->
+
+
+    <owl:Class rdf:about="https://schema.org/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/is-active -->
+
+
+    <owl:NamedIndividual rdf:about="https://dhp.lbg.ac.at/aktivplan/is-active">
+        <rdf:type rdf:resource="https://dhp.lbg.ac.at/aktivplan/tailoring-variable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/patient002 -->
+
+
+    <owl:NamedIndividual rdf:about="https://dhp.lbg.ac.at/aktivplan/patient002">
+        <rdf:type rdf:resource="https://schema.org/Patient"/>
+        <sosa:hosts rdf:resource="https://dhp.lbg.ac.at/aktivplan/platform01"/>
+        <aktivplan:aktivplan-id>1232123</aktivplan:aktivplan-id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/platform01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://dhp.lbg.ac.at/aktivplan/platform01">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <sosa:hosts rdf:resource="https://dhp.lbg.ac.at/aktivplan/sensor01"/>
+        <sosa:hosts rdf:resource="https://dhp.lbg.ac.at/aktivplan/sensor02"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/sensor01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://dhp.lbg.ac.at/aktivplan/sensor01">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/sensor02 -->
+
+
+    <owl:NamedIndividual rdf:about="https://dhp.lbg.ac.at/aktivplan/sensor02">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dhp.lbg.ac.at/aktivplan/test -->
+
+
+    <owl:NamedIndividual rdf:about="https://dhp.lbg.ac.at/aktivplan/test"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-actuator">
+        <rdfs:label>hosts actuator</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-sampler">
+        <rdfs:label>hosts sampler</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://dhp.lbg.ac.at/aktivplan/hosts-sensor">
+        <rdfs:label>hosts sensor</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

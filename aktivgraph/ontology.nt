@@ -1,0 +1,226 @@
+<https://dhp.lbg.ac.at/aktivplan/aktivgraph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://dhp.lbg.ac.at/aktivplan/aktivgraph> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time#2016> .
+<https://dhp.lbg.ac.at/aktivplan/aktivgraph> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ag" .
+<https://dhp.lbg.ac.at/aktivplan/aktivgraph> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://dhp.lbg.ac.at/aktivplan/> .
+<https://dhp.lbg.ac.at/aktivplan/aktivgraph> <http://www.w3.org/2000/01/rdf-schema#comment> "Part of the Master's thesis by Wolfgang Kremser (wolfgang.kremser@salzburgresearch.at)"@en .
+<https://dhp.lbg.ac.at/aktivplan/aktivgraph> <http://www.w3.org/2000/01/rdf-schema#label> "Aktivgraph"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/isPartOf
+<https://schema.org/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/ns/sosa/hosts
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://dhp.lbg.ac.at/aktivplan/hosts-actuator> .
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://dhp.lbg.ac.at/aktivplan/hosts-sampler> .
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://dhp.lbg.ac.at/aktivplan/hosts-sensor> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/hosts-actuator
+<https://dhp.lbg.ac.at/aktivplan/hosts-actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-actuator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/sosa/Platform> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-actuator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/sosa/Actuator> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/hosts-sampler
+<https://dhp.lbg.ac.at/aktivplan/hosts-sampler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-sampler> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/sosa/Platform> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-sampler> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/sosa/Sampler> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/hosts-sensor
+<https://dhp.lbg.ac.at/aktivplan/hosts-sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-sensor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/sosa/Platform> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-sensor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/sosa/Sensor> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://dhp.lbg.ac.at/aktivplan/aktivplan-id
+<https://dhp.lbg.ac.at/aktivplan/aktivplan-id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://dhp.lbg.ac.at/aktivplan/aktivplan-id> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Patient> .
+<https://dhp.lbg.ac.at/aktivplan/aktivplan-id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://dhp.lbg.ac.at/aktivplan/aktivplan-id> <http://www.w3.org/2000/01/rdf-schema#label> "Aktivplan ID" .
+# 
+# https://dhp.lbg.ac.at/aktivplan/hosts-actuator
+<https://dhp.lbg.ac.at/aktivplan/hosts-actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-actuator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/hosts-sampler
+<https://dhp.lbg.ac.at/aktivplan/hosts-sampler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-sampler> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/hosts-sensor
+<https://dhp.lbg.ac.at/aktivplan/hosts-sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://dhp.lbg.ac.at/aktivplan/hosts-sensor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://openweathermap.org/api/one-call-3#hasWeather
+<https://openweathermap.org/api/one-call-3#hasWeather> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://openweathermap.org/api/one-call-3#hasWeather> <http://www.w3.org/2000/01/rdf-schema#domain> <https://openweathermap.org/api/one-call-3#Weather> .
+<https://openweathermap.org/api/one-call-3#Weather> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://openweathermap.org/api/one-call-3#hasWeather> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.bioontology.org/ontology/SNOMEDCT/116154003
+<http://purl.bioontology.org/ontology/SNOMEDCT/116154003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.bioontology.org/ontology/SNOMEDCT/116154003> <http://www.w3.org/2002/07/owl#equivalentClass> <https://schema.org/Patient> .
+# 
+# http://www.w3.org/2006/time#ProperInterval
+<http://www.w3.org/2006/time#ProperInterval> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2006/time#Instant> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2006/time#hasEnd> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2006/time#Instant> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2006/time#hasBeginning> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# http://www.w3.org/ns/sosa/Actuator
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that is used by, or implements, an (Actuation) Procedure that changes the state of the world."@en .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2000/01/rdf-schema#label> "Actuator"@en .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2004/02/skos/core#definition> "A device that is used by, or implements, an (Actuation) Procedure that changes the state of the world."@en .
+<http://www.w3.org/ns/sosa/Actuator> <http://www.w3.org/2004/02/skos/core#example> "A window actuator for automatic window control, i.e., opening or closing the window."@en .
+# 
+# http://www.w3.org/ns/sosa/Platform
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2000/01/rdf-schema#comment> "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms."@en .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2000/01/rdf-schema#label> "Platform"@en .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2004/02/skos/core#definition> "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms."@en .
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/2004/02/skos/core#example> "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators."@en .
+# 
+# http://www.w3.org/ns/sosa/Sampler
+<http://www.w3.org/ns/sosa/Sampler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Sampler> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that is used by, or implements, a Sampling Procedure to create or transform one or more samples."@en .
+<http://www.w3.org/ns/sosa/Sampler> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Sampler> <http://www.w3.org/2000/01/rdf-schema#label> "Sampler"@en .
+<http://www.w3.org/ns/sosa/Sampler> <http://www.w3.org/2004/02/skos/core#definition> "A device that is used by, or implements, a Sampling Procedure to create or transform one or more samples."@en .
+<http://www.w3.org/ns/sosa/Sampler> <http://www.w3.org/2004/02/skos/core#example> "A ball mill, diamond drill, hammer, hypodermic syringe and needle, image Sensor or a soil auger can all act as sampling devices (i.e., be Samplers). However, sometimes the distinction between the Sampler and the Sensor is not evident, as they are packaged as a unit. A Sampler need not be a physical device."@en .
+# 
+# http://www.w3.org/ns/sosa/Sensor
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/sosa/> .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor"@en .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2004/02/skos/core#definition> "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en .
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/2004/02/skos/core#example> "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en .
+# 
+# https://dhp.lbg.ac.at/aktivplan/tailoring-variable
+<https://dhp.lbg.ac.at/aktivplan/tailoring-variable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://openweathermap.org/api/one-call-3#Weather
+# 
+# https://schema.org/MedicalAudience
+<https://schema.org/MedicalAudience> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://schema.org/Patient
+<https://schema.org/Patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/MedicalAudience> .
+<https://schema.org/Patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/Person> .
+<https://schema.org/Patient> <http://www.w3.org/2000/01/rdf-schema#comment> "A patient is any person recipient of health care services." .
+<https://schema.org/Patient> <http://www.w3.org/2000/01/rdf-schema#label> "Patient" .
+<https://schema.org/Patient> <https://schema.org/isPartOf> <https://health-lifesci.schema.org> .
+# 
+# https://schema.org/Person
+<https://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://dhp.lbg.ac.at/aktivplan/is-active
+<https://dhp.lbg.ac.at/aktivplan/is-active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dhp.lbg.ac.at/aktivplan/is-active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://dhp.lbg.ac.at/aktivplan/tailoring-variable> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/patient002
+<https://dhp.lbg.ac.at/aktivplan/patient002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dhp.lbg.ac.at/aktivplan/patient002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Patient> .
+<https://dhp.lbg.ac.at/aktivplan/patient002> <http://www.w3.org/ns/sosa/hosts> <https://dhp.lbg.ac.at/aktivplan/platform01> .
+<https://dhp.lbg.ac.at/aktivplan/patient002> <https://dhp.lbg.ac.at/aktivplan/aktivplan-id> "1232123" .
+# 
+# https://dhp.lbg.ac.at/aktivplan/platform01
+<https://dhp.lbg.ac.at/aktivplan/platform01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dhp.lbg.ac.at/aktivplan/platform01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/sosa/Platform> .
+<https://dhp.lbg.ac.at/aktivplan/platform01> <http://www.w3.org/ns/sosa/hosts> <https://dhp.lbg.ac.at/aktivplan/sensor01> .
+<https://dhp.lbg.ac.at/aktivplan/platform01> <http://www.w3.org/ns/sosa/hosts> <https://dhp.lbg.ac.at/aktivplan/sensor02> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/sensor01
+<https://dhp.lbg.ac.at/aktivplan/sensor01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dhp.lbg.ac.at/aktivplan/sensor01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/sosa/Sensor> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/sensor02
+<https://dhp.lbg.ac.at/aktivplan/sensor02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://dhp.lbg.ac.at/aktivplan/sensor02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/sosa/Sensor> .
+# 
+# https://dhp.lbg.ac.at/aktivplan/test
+<https://dhp.lbg.ac.at/aktivplan/test> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<https://dhp.lbg.ac.at/aktivplan/hosts-actuator> <http://www.w3.org/2000/01/rdf-schema#label> "hosts actuator" .
+# 
+<https://dhp.lbg.ac.at/aktivplan/hosts-sampler> <http://www.w3.org/2000/01/rdf-schema#label> "hosts sampler" .
+# 
+<https://dhp.lbg.ac.at/aktivplan/hosts-sensor> <http://www.w3.org/2000/01/rdf-schema#label> "hosts sensor" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
