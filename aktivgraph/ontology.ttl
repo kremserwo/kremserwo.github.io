@@ -58,7 +58,7 @@ owl:versionInfo "1.0"@en .
 :assignedTo rdf:type owl:ObjectProperty ,
                      owl:SymmetricProperty ;
             rdfs:domain <http://www.w3.org/ns/sosa/Platform> ;
-            rdfs:range <https://schema.org/Patient> ;
+            rdfs:range :AktivplanPatient ;
             rdfs:comment "Indicates that a Platform (e.g. Smartphone) is used by a Patient" ;
             rdfs:label "assigned to" .
 
@@ -114,6 +114,13 @@ owl:versionInfo "1.0"@en .
                            rdfs:label "tailoring variables" .
 
 
+###  https://w3id.org/aktivgraph/suggestFor
+:suggestFor rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://www.w3.org/2006/time#Interval> ;
+            rdfs:range <http://www.w3.org/2006/time#Interval> ;
+            rdfs:comment "A relationship between two time:Interval objects T1 and T2, where T1 is contained within T2. T1 is suitable for performing a task that needs to be performed in T2." .
+
+
 ###  https://w3id.org/aktivgraph/withDecisionPoints
 :withDecisionPoints rdf:type owl:ObjectProperty ;
                     rdfs:domain :JITAI ;
@@ -134,6 +141,14 @@ owl:versionInfo "1.0"@en .
 #################################################################
 #    Data properties
 #################################################################
+
+###  https://w3id.org/aktivgraph/hasAktivplanID
+:hasAktivplanID rdf:type owl:DatatypeProperty ;
+                rdfs:domain <https://schema.org/Patient> ;
+                rdfs:range xsd:string ;
+                rdfs:comment "The ID the patient has within Aktivplan" ;
+                rdfs:label "has Aktivplan ID" .
+
 
 ###  https://w3id.org/aktivgraph/query
 :query rdf:type owl:DatatypeProperty ;
@@ -181,6 +196,18 @@ owl:versionInfo "1.0"@en .
           rdfs:subClassOf <http://www.w3.org/2006/time#ProperInterval> ;
           rdfs:comment "An activity is a time interval of performed or planned, free or guided physical exercise" ;
           rdfs:label "Activity" .
+
+
+###  https://w3id.org/aktivgraph/AktivplanPatient
+:AktivplanPatient rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasAktivplanID ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onDataRange xsd:string
+                                      ] ;
+                  rdfs:subClassOf <https://schema.org/Patient> ;
+                  rdfs:comment "An Aktivplan user with the user role PATIENT" ;
+                  rdfs:label "Aktivplan Patient" .
 
 
 ###  https://w3id.org/aktivgraph/DecisionPoint

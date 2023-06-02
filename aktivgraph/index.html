@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/aktivgraph#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/aktivgraph#","name":"Aktivgraph Ontology", "headline":"Document describing the ontology https://w3id.org/aktivgraph#", "datePublished":"Fri Jun 02 18:54:58 UTC 2023", "version":"1.0", "author":[{"@type":"Person",}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/aktivgraph#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/aktivgraph#","name":"Aktivgraph Ontology", "headline":"Document describing the ontology https://w3id.org/aktivgraph#", "datePublished":"Fri Jun 02 19:12:50 UTC 2023", "version":"1.0", "author":[{"@type":"Person",}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -91,6 +91,9 @@ This ontology has the following classes and properties.</span>
       <a href="#https://w3id.org/aktivgraph/Activity" title="https://w3id.org/aktivgraph/Activity">Activity</a>
    </li>
    <li>
+      <a href="#https://w3id.org/aktivgraph/AktivplanPatient" title="https://w3id.org/aktivgraph/AktivplanPatient">Aktivplan Patient</a>
+   </li>
+   <li>
       <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
    </li>
    <li>
@@ -160,6 +163,11 @@ This ontology has the following classes and properties.</span>
          title="https://w3id.org/aktivgraph/requiresActuatorCapability">requires actuator capability</a>
    </li>
    <li>
+      <a href="#https://w3id.org/aktivgraph/suggestFor" title="https://w3id.org/aktivgraph/suggestFor">
+         <span>suggest for</span>
+      </a>
+   </li>
+   <li>
       <a href="#https://w3id.org/aktivgraph/requiresTailoringVariable"
          title="https://w3id.org/aktivgraph/requiresTailoringVariable">tailoring variables</a>
    </li>
@@ -170,6 +178,9 @@ This ontology has the following classes and properties.</span>
       <a href="#https://w3id.org/aktivgraph/withTextProvider" title="https://w3id.org/aktivgraph/withTextProvider">with text provider</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://w3id.org/aktivgraph/hasAktivplanID" title="https://w3id.org/aktivgraph/hasAktivplanID">has Aktivplan ID</a>
+   </li>
    <li>
       <a href="#https://w3id.org/aktivgraph/query" title="https://w3id.org/aktivgraph/query">query</a>
    </li>
@@ -198,6 +209,9 @@ This section provides details for each class and property defined by Aktivgraph.
    <ul class="hlist">
       <li>
          <a href="#https://w3id.org/aktivgraph/Activity" title="https://w3id.org/aktivgraph/Activity">Activity</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/AktivplanPatient" title="https://w3id.org/aktivgraph/AktivplanPatient">Aktivplan Patient</a>
       </li>
       <li>
          <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
@@ -264,6 +278,36 @@ This section provides details for each class and property defined by Aktivgraph.
             <a href="http://www.w3.org/2006/time#ProperInterval"
                target="_blank"
                title="http://www.w3.org/2006/time#ProperInterval">proper interval</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/AktivplanPatient">
+      <h3>Aktivplan Patient<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/AktivplanPatient</p>
+      <div class="comment">
+         <span class="markdown">An Aktivplan user with the user role PATIENT</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/hasAktivplanID" title="https://w3id.org/aktivgraph/hasAktivplanID">has Aktivplan ID</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">exactly</span> 1</dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://schema.org/Patient"
+               target="_blank"
+               title="https://schema.org/Patient">patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/assignedTo" title="https://w3id.org/aktivgraph/assignedTo">assigned to</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -686,6 +730,11 @@ This section provides details for each class and property defined by Aktivgraph.
             title="https://w3id.org/aktivgraph/requiresActuatorCapability">requires actuator capability</a>
       </li>
       <li>
+         <a href="#https://w3id.org/aktivgraph/suggestFor" title="https://w3id.org/aktivgraph/suggestFor">
+            <span>suggest for</span>
+         </a>
+      </li>
+      <li>
          <a href="#https://w3id.org/aktivgraph/requiresTailoringVariable"
             title="https://w3id.org/aktivgraph/requiresTailoringVariable">tailoring variables</a>
       </li>
@@ -719,9 +768,7 @@ This section provides details for each class and property defined by Aktivgraph.
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="https://schema.org/Patient"
-                  target="_blank"
-                  title="https://schema.org/Patient">patient</a>
+               <a href="#https://w3id.org/aktivgraph/AktivplanPatient" title="https://w3id.org/aktivgraph/AktivplanPatient">Aktivplan Patient</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -867,6 +914,33 @@ This section provides details for each class and property defined by Aktivgraph.
          </dl>
       </div>
    </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/suggestFor">
+      <h3>suggest for<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/suggestFor</p>
+      <div class="comment">
+         <span class="markdown">A relationship between two time:Interval objects T1 and T2, where T1 is contained within T2. T1 is suitable for performing a task that needs to be performed in T2.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://www.w3.org/2006/time#Interval"
+                  target="_blank"
+                  title="http://www.w3.org/2006/time#Interval">interval</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2006/time#Interval"
+                  target="_blank"
+                  title="http://www.w3.org/2006/time#Interval">interval</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="https://w3id.org/aktivgraph/requiresTailoringVariable">
       <h3>tailoring variables<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -958,6 +1032,9 @@ This section provides details for each class and property defined by Aktivgraph.
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
+         <a href="#https://w3id.org/aktivgraph/hasAktivplanID" title="https://w3id.org/aktivgraph/hasAktivplanID">has Aktivplan ID</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/aktivgraph/query" title="https://w3id.org/aktivgraph/query">query</a>
       </li>
       <li>
@@ -970,6 +1047,34 @@ This section provides details for each class and property defined by Aktivgraph.
          <a href="#https://w3id.org/aktivgraph/var" title="https://w3id.org/aktivgraph/var">Var</a>
       </li>
    </ul>
+   <div class="entity" id="https://w3id.org/aktivgraph/hasAktivplanID">
+      <h3>has Aktivplan ID<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/hasAktivplanID</p>
+      <div class="comment">
+         <span class="markdown">The ID the patient has within Aktivplan</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="https://schema.org/Patient"
+                  target="_blank"
+                  title="https://schema.org/Patient">patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="https://w3id.org/aktivgraph/query">
       <h3>query<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>

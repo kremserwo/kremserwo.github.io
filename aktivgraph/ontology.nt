@@ -52,8 +52,7 @@
 <https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
 <https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/sosa/Platform> .
-<https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Patient> .
-<https://schema.org/Patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aktivgraph/AktivplanPatient> .
 <https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a Platform (e.g. Smartphone) is used by a Patient" .
 <https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#label> "assigned to" .
 # 
@@ -102,6 +101,12 @@
 <https://w3id.org/aktivgraph/requiresTailoringVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "A provider of tailoring variables" .
 <https://w3id.org/aktivgraph/requiresTailoringVariable> <http://www.w3.org/2000/01/rdf-schema#label> "tailoring variables" .
 # 
+# https://w3id.org/aktivgraph/suggestFor
+<https://w3id.org/aktivgraph/suggestFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/suggestFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#Interval> .
+<https://w3id.org/aktivgraph/suggestFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Interval> .
+<https://w3id.org/aktivgraph/suggestFor> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between two time:Interval objects T1 and T2, where T1 is contained within T2. T1 is suitable for performing a task that needs to be performed in T2." .
+# 
 # https://w3id.org/aktivgraph/withDecisionPoints
 <https://w3id.org/aktivgraph/withDecisionPoints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/aktivgraph/withDecisionPoints> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/JITAI> .
@@ -125,6 +130,13 @@
 # #
 # #################################################################
 # 
+# 
+# https://w3id.org/aktivgraph/hasAktivplanID
+<https://w3id.org/aktivgraph/hasAktivplanID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aktivgraph/hasAktivplanID> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Patient> .
+<https://w3id.org/aktivgraph/hasAktivplanID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aktivgraph/hasAktivplanID> <http://www.w3.org/2000/01/rdf-schema#comment> "The ID the patient has within Aktivplan" .
+<https://w3id.org/aktivgraph/hasAktivplanID> <http://www.w3.org/2000/01/rdf-schema#label> "has Aktivplan ID" .
 # 
 # https://w3id.org/aktivgraph/query
 <https://w3id.org/aktivgraph/query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -165,6 +177,7 @@
 # 
 # 
 # https://schema.org/Patient
+<https://schema.org/Patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://w3id.org/aktivgraph/Activity
 <https://w3id.org/aktivgraph/Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -172,16 +185,27 @@
 <https://w3id.org/aktivgraph/Activity> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity is a time interval of performed or planned, free or guided physical exercise" .
 <https://w3id.org/aktivgraph/Activity> <http://www.w3.org/2000/01/rdf-schema#label> "Activity" .
 # 
+# https://w3id.org/aktivgraph/AktivplanPatient
+<https://w3id.org/aktivgraph/AktivplanPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/AktivplanPatient> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/hasAktivplanID> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/AktivplanPatient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/Patient> .
+<https://w3id.org/aktivgraph/AktivplanPatient> <http://www.w3.org/2000/01/rdf-schema#comment> "An Aktivplan user with the user role PATIENT" .
+<https://w3id.org/aktivgraph/AktivplanPatient> <http://www.w3.org/2000/01/rdf-schema#label> "Aktivplan Patient" .
+# 
 # https://w3id.org/aktivgraph/DecisionPoint
 <https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid2 .
-_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/InterventionOption> .
-_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/hasInterventionOption> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid3 .
-_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/TailoringVariables> .
-_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/requiresTailoringVariable> .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/InterventionOption> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/hasInterventionOption> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/TailoringVariables> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/requiresTailoringVariable> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "A point in time where a JITAI system decides if and how it intervenes" .
 <https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Decision Point" .
 # 
@@ -197,10 +221,10 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/aktivgraph/JITAI
 <https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid4 .
-_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/DecisionPoint> .
-_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/withDecisionPoints> .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/DecisionPoint> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/withDecisionPoints> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/2000/01/rdf-schema#comment> "A class of mHealth invertentions that provide the right type/amount of support, at the right time." .
 <https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/2000/01/rdf-schema#label> "Just-In-Time Adaptive Intervention" .
 # 
@@ -218,26 +242,26 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/aktivgraph/PeriodicDecisionPoint
 <https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid5 .
-_:genid5 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2006/time#GeneralDateTimeDescription> .
-_:genid5 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/hasPeriod> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2006/time#GeneralDateTimeDescription> .
+_:genid6 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/hasPeriod> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/DecisionPoint> .
 <https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "A decision point that occurs periodically, i.e. at a fixed time interval" .
 <https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Periodic Decision Point" .
 # 
 # https://w3id.org/aktivgraph/PushMessage
 <https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid6 .
-_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/SendPushMessage> .
-_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/requiresActuatorCapability> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid7 .
-_:genid7 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/aktivgraph/TextProvider> .
-_:genid7 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/withTextProvider> .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/SendPushMessage> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/requiresActuatorCapability> .
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/aktivgraph/TextProvider> .
+_:genid8 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/withTextProvider> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/InterventionOption> .
 <https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2000/01/rdf-schema#comment> "Send a push message to the patient" .
 <https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2000/01/rdf-schema#label> "Push Message" .
