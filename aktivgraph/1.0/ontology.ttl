@@ -1,0 +1,321 @@
+@prefix : <https://w3id.org/aktivgraph/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/aktivgraph/> .
+
+<https://w3id.org/aktivgraph/> rdf:type owl:Ontology ;
+                                owl:versionIRI <https://w3id.org/aktivgraph/1.0> ;
+                                owl:imports <http://www.w3.org/2006/time#2016> ,
+                                            <http://www.w3.org/ns/ssn/systems/> ;
+                                <http://purl.org/dc/elements/1.1/creator> [ ] ;
+<http://purl.org/dc/elements/1.1/descritpion> "Aktivgraph is a vocabulary to describe entities of the Aktivgraph data model"@en ;
+<http://purl.org/dc/elements/1.1/title> "Aktivgraph Ontology"@en ;
+<http://purl.org/vocab/vann/preferredNamespacePrefix> "ag"@en ;
+<http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aktivgraph#" ;
+rdfs:label "Aktivgraph"@en ;
+owl:versionInfo "1.0"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/descritpion
+<http://purl.org/dc/elements/1.1/descritpion> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#fn
+<http://www.w3.org/2006/vcard/ns#fn> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#hasEmail
+<http://www.w3.org/2006/vcard/ns#hasEmail> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/aktivgraph/assignedTo
+:assignedTo rdf:type owl:ObjectProperty ,
+                     owl:SymmetricProperty ;
+            rdfs:domain <http://www.w3.org/ns/sosa/Platform> ;
+            rdfs:range <https://schema.org/Patient> ;
+            rdfs:comment "Indicates that a Platform (e.g. Smartphone) is used by a Patient" ;
+            rdfs:label "assigned to" .
+
+
+###  https://w3id.org/aktivgraph/bind
+:bind rdf:type owl:ObjectProperty ;
+      rdfs:domain :SPARQLBindings ;
+      rdfs:range :VariableBinding ;
+      rdfs:comment "Assign a variable bind to a SPARQL query" ;
+      rdfs:label "bind" .
+
+
+###  https://w3id.org/aktivgraph/hasDecisionRule
+:hasDecisionRule rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :DecisionPoint ;
+                 rdfs:range :DecisionRule ;
+                 rdfs:comment "The decision rule that is used to evaluate decision points" ;
+                 rdfs:label "has decision rule" .
+
+
+###  https://w3id.org/aktivgraph/hasInterventionOption
+:hasInterventionOption rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain :DecisionPoint ;
+                       rdfs:range :InterventionOption ;
+                       rdfs:comment "An intervention option available to this JITAI" ;
+                       rdfs:label "has intervention option" .
+
+
+###  https://w3id.org/aktivgraph/hasPeriod
+:hasPeriod rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :PeriodicDecisionPoint ;
+           rdfs:range <http://www.w3.org/2006/time#GeneralDateTimeDescription> ;
+           rdfs:comment "Period of a periodic decision point" ;
+           rdfs:label "has period" .
+
+
+###  https://w3id.org/aktivgraph/requiresActuatorCapability
+:requiresActuatorCapability rdf:type owl:ObjectProperty ;
+                            rdfs:domain :InterventionOption ;
+                            rdfs:comment "actuator capability required by this intervention option" ;
+                            rdfs:label "requires actuator capability" .
+
+
+###  https://w3id.org/aktivgraph/requiresTailoringVariable
+:requiresTailoringVariable rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain :DecisionPoint ;
+                           rdfs:range :TailoringVariables ;
+                           rdfs:comment "A provider of tailoring variables" ;
+                           rdfs:label "tailoring variables" .
+
+
+###  https://w3id.org/aktivgraph/withDecisionPoints
+:withDecisionPoints rdf:type owl:ObjectProperty ;
+                    rdfs:domain :JITAI ;
+                    rdfs:range :DecisionPoint ;
+                    rdfs:comment "This JITAI's type of decision points" ;
+                    rdfs:label "with decision points" .
+
+
+###  https://w3id.org/aktivgraph/withTextProvider
+:withTextProvider rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :InterventionOption ;
+                  rdfs:range :TextProvider ;
+                  rdfs:comment "The text provider for the inverntion option" ;
+                  rdfs:label "with text provider" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/aktivgraph/query
+:query rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :SPARQLBindings ;
+       rdfs:range xsd:string ;
+       rdfs:comment "The SPARQL query of a SPARQL binding" ;
+       rdfs:label "query" .
+
+
+###  https://w3id.org/aktivgraph/templateFilePath
+:templateFilePath rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "For decision rules that are template-based, this is the file path that contains the template text" ;
+                  rdfs:label "template file path" .
+
+
+###  https://w3id.org/aktivgraph/val
+:val rdf:type owl:DatatypeProperty ;
+     rdfs:domain :VariableBinding ;
+     rdfs:range xsd:string ;
+     rdfs:comment "The value of a binding" ;
+     rdfs:label "Val" .
+
+
+###  https://w3id.org/aktivgraph/var
+:var rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :VariableBinding ;
+     rdfs:range xsd:string ;
+     rdfs:comment "The variable name of a binding (use without leading ?)" ;
+     rdfs:label "Var" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://schema.org/Patient
+<https://schema.org/Patient> rdf:type owl:Class .
+
+
+###  https://w3id.org/aktivgraph/Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2006/time#ProperInterval> ;
+          rdfs:comment "An activity is a time interval of performed or planned, free or guided physical exercise" ;
+          rdfs:label "Activity" .
+
+
+###  https://w3id.org/aktivgraph/DecisionPoint
+:DecisionPoint rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasInterventionOption ;
+                                     owl:someValuesFrom :InterventionOption
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :requiresTailoringVariable ;
+                                     owl:someValuesFrom :TailoringVariables
+                                   ] ;
+               rdfs:comment "A point in time where a JITAI system decides if and how it intervenes" ;
+               rdfs:label "Decision Point" .
+
+
+###  https://w3id.org/aktivgraph/DecisionRule
+:DecisionRule rdf:type owl:Class ;
+              rdfs:comment "A rule that connects tailoring variables to intervention options" ;
+              rdfs:label "Decision Rule" .
+
+
+###  https://w3id.org/aktivgraph/InterventionOption
+:InterventionOption rdf:type owl:Class ;
+                    rdfs:comment "A list of available intervention options" ;
+                    rdfs:label "Intervention Option" .
+
+
+###  https://w3id.org/aktivgraph/JITAI
+:JITAI rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :withDecisionPoints ;
+                             owl:someValuesFrom :DecisionPoint
+                           ] ;
+       rdfs:comment "A class of mHealth invertentions that provide the right type/amount of support, at the right time." ;
+       rdfs:label "Just-In-Time Adaptive Intervention" .
+
+
+###  https://w3id.org/aktivgraph/MapToTemplate
+:MapToTemplate rdf:type owl:Class ;
+               rdfs:subClassOf :TextProvider ;
+               rdfs:comment "A decision rule that maps the tailoring variables into a template. The variable names need to match between template and tailoring variable." ;
+               rdfs:label "Map To Template" .
+
+
+###  https://w3id.org/aktivgraph/MessageBasedDecisionPoint
+:MessageBasedDecisionPoint rdf:type owl:Class ;
+                           rdfs:subClassOf :ReactiveDecisionPoint ;
+                           rdfs:comment "A decision point that triggers on an incoming message" ;
+                           rdfs:label "Message-Based Decision Point" .
+
+
+###  https://w3id.org/aktivgraph/PeriodicDecisionPoint
+:PeriodicDecisionPoint rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasPeriod ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <http://www.w3.org/2006/time#GeneralDateTimeDescription>
+                                           ] ;
+                       rdfs:subClassOf :DecisionPoint ;
+                       rdfs:comment "A decision point that occurs periodically, i.e. at a fixed time interval" ;
+                       rdfs:label "Periodic Decision Point" .
+
+
+###  https://w3id.org/aktivgraph/PushMessage
+:PushMessage rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :requiresActuatorCapability ;
+                                   owl:someValuesFrom :SendPushMessage
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :withTextProvider ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :TextProvider
+                                 ] ;
+             rdfs:subClassOf :InterventionOption ;
+             rdfs:comment "Send a push message to the patient" ;
+             rdfs:label "Push Message" .
+
+
+###  https://w3id.org/aktivgraph/ReactiveDecisionPoint
+:ReactiveDecisionPoint rdf:type owl:Class ;
+                       rdfs:subClassOf :DecisionPoint ;
+                       rdfs:comment "A decision point in response to an external signal detection" ;
+                       rdfs:label "Reactive Decision Point" .
+
+
+###  https://w3id.org/aktivgraph/SPARQLBindings
+:SPARQLBindings rdf:type owl:Class ;
+                rdfs:subClassOf :TailoringVariables ;
+                rdfs:comment "A SPARQL query whose bindings are directly used as tailoring variables" ;
+                rdfs:label "SPARQL Bindings" .
+
+
+###  https://w3id.org/aktivgraph/SendPushMessage
+:SendPushMessage rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/ssn/systems/SystemCapability> ;
+                 rdfs:comment "Capability of a system to send push messages" ;
+                 rdfs:label "Send Push Messages" .
+
+
+###  https://w3id.org/aktivgraph/Smartphone
+:Smartphone rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> ;
+            rdfs:comment "A smartphone is a personal wearable device capable of running applications and some amount of sensing" ;
+            rdfs:label "Smartpohone" .
+
+
+###  https://w3id.org/aktivgraph/TailoringVariables
+:TailoringVariables rdf:type owl:Class ;
+                    rdfs:comment "A set of variables whose value is used to determine which intervention option to choose and when to provide it" ;
+                    rdfs:label "Tailoring Variables" .
+
+
+###  https://w3id.org/aktivgraph/TextProvider
+:TextProvider rdf:type owl:Class ;
+              rdfs:subClassOf :DecisionRule ;
+              rdfs:comment "A decision rule that, after application, results in text" ;
+              rdfs:label "Text Provider" .
+
+
+###  https://w3id.org/aktivgraph/VariableBinding
+:VariableBinding rdf:type owl:Class ;
+                 rdfs:comment "A variable binding of a SPARQL query" ;
+                 rdfs:label "Variable Binding" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/aktivgraph/PHKG
+:PHKG rdf:type owl:NamedIndividual ;
+      rdfs:comment "Cosntant representing the personal health knowledge graph name in variable bindings" ;
+      rdfs:label "PHKG Name Constant" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
