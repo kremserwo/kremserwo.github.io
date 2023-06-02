@@ -1,1 +1,1121 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Aktivgraph Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/aktivgraph#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/aktivgraph#","name":"Aktivgraph Ontology", "headline":"Document describing the ontology https://w3id.org/aktivgraph#", "datePublished":"Fri Jun 02 18:54:58 UTC 2023", "version":"1.0", "author":[{"@type":"Person",}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Aktivgraph Ontology</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/aktivgraph/1.0">https://w3id.org/aktivgraph/1.0</a></dd>
+<dt>Revision:</dt>
+<dd>1.0</dd>
+<dt>Authors:</dt>
+<dd>Agent 1</dd>
+
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://www.w3.org/2006/time">time</a></dd><dd><a href="http://www.w3.org/ns/sosa/">&lt;http://www.w3.org/ns/sosa/&gt;</a></dd><dd><a href="http://www.w3.org/ns/ssn/">&lt;http://www.w3.org/ns/ssn/&gt;</a></dd><dd><a href="http://www.w3.org/ns/ssn/systems/">&lt;http://www.w3.org/ns/ssn/systems/&gt;</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>null. Aktivgraph Ontology. Revision: 1.0. Retrieved from: https://w3id.org/aktivgraph/1.0</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Aktivgraph: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://w3id.org/aktivgraph/Activity" title="https://w3id.org/aktivgraph/Activity">Activity</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/DecisionRule" title="https://w3id.org/aktivgraph/DecisionRule">Decision Rule</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/InterventionOption" title="https://w3id.org/aktivgraph/InterventionOption">Intervention Option</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/JITAI" title="https://w3id.org/aktivgraph/JITAI">Just-In-Time Adaptive Intervention</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/MapToTemplate" title="https://w3id.org/aktivgraph/MapToTemplate">Map To Template</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/MessageBasedDecisionPoint"
+         title="https://w3id.org/aktivgraph/MessageBasedDecisionPoint">Message-Based Decision Point</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/PeriodicDecisionPoint"
+         title="https://w3id.org/aktivgraph/PeriodicDecisionPoint">Periodic Decision Point</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/PushMessage" title="https://w3id.org/aktivgraph/PushMessage">Push Message</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/ReactiveDecisionPoint"
+         title="https://w3id.org/aktivgraph/ReactiveDecisionPoint">Reactive Decision Point</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/SendPushMessage" title="https://w3id.org/aktivgraph/SendPushMessage">Send Push Messages</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/Smartphone" title="https://w3id.org/aktivgraph/Smartphone">Smartpohone</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/SPARQLBindings" title="https://w3id.org/aktivgraph/SPARQLBindings">SPARQL Bindings</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/TailoringVariables" title="https://w3id.org/aktivgraph/TailoringVariables">Tailoring Variables</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/TextProvider" title="https://w3id.org/aktivgraph/TextProvider">Text Provider</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/VariableBinding" title="https://w3id.org/aktivgraph/VariableBinding">Variable Binding</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://w3id.org/aktivgraph/assignedTo" title="https://w3id.org/aktivgraph/assignedTo">assigned to</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/bind" title="https://w3id.org/aktivgraph/bind">bind</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/hasDecisionRule" title="https://w3id.org/aktivgraph/hasDecisionRule">has decision rule</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/hasInterventionOption"
+         title="https://w3id.org/aktivgraph/hasInterventionOption">has intervention option</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/hasPeriod" title="https://w3id.org/aktivgraph/hasPeriod">has period</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/requiresActuatorCapability"
+         title="https://w3id.org/aktivgraph/requiresActuatorCapability">requires actuator capability</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/requiresTailoringVariable"
+         title="https://w3id.org/aktivgraph/requiresTailoringVariable">tailoring variables</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/withDecisionPoints" title="https://w3id.org/aktivgraph/withDecisionPoints">with decision points</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/withTextProvider" title="https://w3id.org/aktivgraph/withTextProvider">with text provider</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://w3id.org/aktivgraph/query" title="https://w3id.org/aktivgraph/query">query</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/templateFilePath" title="https://w3id.org/aktivgraph/templateFilePath">template file path</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/val" title="https://w3id.org/aktivgraph/val">Val</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/aktivgraph/var" title="https://w3id.org/aktivgraph/var">Var</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://w3id.org/aktivgraph/PHKG" title="https://w3id.org/aktivgraph/PHKG">PHKG Name Constant</a>
+   </li>
+</ul>
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Aktivgraph classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Aktivgraph.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/aktivgraph/Activity" title="https://w3id.org/aktivgraph/Activity">Activity</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/DecisionRule" title="https://w3id.org/aktivgraph/DecisionRule">Decision Rule</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/InterventionOption" title="https://w3id.org/aktivgraph/InterventionOption">Intervention Option</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/JITAI" title="https://w3id.org/aktivgraph/JITAI">Just-In-Time Adaptive Intervention</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/MapToTemplate" title="https://w3id.org/aktivgraph/MapToTemplate">Map To Template</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/MessageBasedDecisionPoint"
+            title="https://w3id.org/aktivgraph/MessageBasedDecisionPoint">Message-Based Decision Point</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/PeriodicDecisionPoint"
+            title="https://w3id.org/aktivgraph/PeriodicDecisionPoint">Periodic Decision Point</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/PushMessage" title="https://w3id.org/aktivgraph/PushMessage">Push Message</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/ReactiveDecisionPoint"
+            title="https://w3id.org/aktivgraph/ReactiveDecisionPoint">Reactive Decision Point</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/SendPushMessage" title="https://w3id.org/aktivgraph/SendPushMessage">Send Push Messages</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/Smartphone" title="https://w3id.org/aktivgraph/Smartphone">Smartpohone</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/SPARQLBindings" title="https://w3id.org/aktivgraph/SPARQLBindings">SPARQL Bindings</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/TailoringVariables" title="https://w3id.org/aktivgraph/TailoringVariables">Tailoring Variables</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/TextProvider" title="https://w3id.org/aktivgraph/TextProvider">Text Provider</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/VariableBinding" title="https://w3id.org/aktivgraph/VariableBinding">Variable Binding</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/aktivgraph/Activity">
+      <h3>Activity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/Activity</p>
+      <div class="comment">
+         <span class="markdown">An activity is a time interval of performed or planned, free or guided physical exercise</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/time#ProperInterval"
+               target="_blank"
+               title="http://www.w3.org/2006/time#ProperInterval">proper interval</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/DecisionPoint">
+      <h3>Decision Point<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/DecisionPoint</p>
+      <div class="comment">
+         <span class="markdown">A point in time where a JITAI system decides if and how it intervenes</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/hasInterventionOption"
+               title="https://w3id.org/aktivgraph/hasInterventionOption">has intervention option</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#https://w3id.org/aktivgraph/InterventionOption" title="https://w3id.org/aktivgraph/InterventionOption">Intervention Option</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/requiresTailoringVariable"
+               title="https://w3id.org/aktivgraph/requiresTailoringVariable">tailoring variables</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#https://w3id.org/aktivgraph/TailoringVariables" title="https://w3id.org/aktivgraph/TailoringVariables">Tailoring Variables</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/PeriodicDecisionPoint"
+               title="https://w3id.org/aktivgraph/PeriodicDecisionPoint">Periodic Decision Point</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/aktivgraph/ReactiveDecisionPoint"
+               title="https://w3id.org/aktivgraph/ReactiveDecisionPoint">Reactive Decision Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/hasDecisionRule" title="https://w3id.org/aktivgraph/hasDecisionRule">has decision rule</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/aktivgraph/hasInterventionOption"
+               title="https://w3id.org/aktivgraph/hasInterventionOption">has intervention option</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/aktivgraph/requiresTailoringVariable"
+               title="https://w3id.org/aktivgraph/requiresTailoringVariable">tailoring variables</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/withDecisionPoints" title="https://w3id.org/aktivgraph/withDecisionPoints">with decision points</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/DecisionRule">
+      <h3>Decision Rule<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/DecisionRule</p>
+      <div class="comment">
+         <span class="markdown">A rule that connects tailoring variables to intervention options</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/TextProvider" title="https://w3id.org/aktivgraph/TextProvider">Text Provider</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/hasDecisionRule" title="https://w3id.org/aktivgraph/hasDecisionRule">has decision rule</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/InterventionOption">
+      <h3>Intervention Option<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/InterventionOption</p>
+      <div class="comment">
+         <span class="markdown">A list of available intervention options</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/PushMessage" title="https://w3id.org/aktivgraph/PushMessage">Push Message</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/requiresActuatorCapability"
+               title="https://w3id.org/aktivgraph/requiresActuatorCapability">requires actuator capability</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/aktivgraph/withTextProvider" title="https://w3id.org/aktivgraph/withTextProvider">with text provider</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/hasInterventionOption"
+               title="https://w3id.org/aktivgraph/hasInterventionOption">has intervention option</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/JITAI">
+      <h3>Just-In-Time Adaptive Intervention<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/JITAI</p>
+      <div class="comment">
+         <span class="markdown">A class of mHealth invertentions that provide the right type/amount of support, at the right time.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/withDecisionPoints" title="https://w3id.org/aktivgraph/withDecisionPoints">with decision points</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/withDecisionPoints" title="https://w3id.org/aktivgraph/withDecisionPoints">with decision points</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/MapToTemplate">
+      <h3>Map To Template<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/MapToTemplate</p>
+      <div class="comment">
+         <span class="markdown">A decision rule that maps the tailoring variables into a template. The variable names need to match between template and tailoring variable.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/TextProvider" title="https://w3id.org/aktivgraph/TextProvider">Text Provider</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/MessageBasedDecisionPoint">
+      <h3>Message-Based Decision Point<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/MessageBasedDecisionPoint</p>
+      <div class="comment">
+         <span class="markdown">A decision point that triggers on an incoming message</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/ReactiveDecisionPoint"
+               title="https://w3id.org/aktivgraph/ReactiveDecisionPoint">Reactive Decision Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/PeriodicDecisionPoint">
+      <h3>Periodic Decision Point<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/PeriodicDecisionPoint</p>
+      <div class="comment">
+         <span class="markdown">A decision point that occurs periodically, i.e. at a fixed time interval</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/hasPeriod" title="https://w3id.org/aktivgraph/hasPeriod">has period</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">exactly</span> 1 <a href="http://www.w3.org/2006/time#GeneralDateTimeDescription"
+               target="_blank"
+               title="http://www.w3.org/2006/time#GeneralDateTimeDescription">general date time description</a>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/hasPeriod" title="https://w3id.org/aktivgraph/hasPeriod">has period</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/PushMessage">
+      <h3>Push Message<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/PushMessage</p>
+      <div class="comment">
+         <span class="markdown">Send a push message to the patient</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/requiresActuatorCapability"
+               title="https://w3id.org/aktivgraph/requiresActuatorCapability">requires actuator capability</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#https://w3id.org/aktivgraph/SendPushMessage" title="https://w3id.org/aktivgraph/SendPushMessage">Send Push Messages</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/withTextProvider" title="https://w3id.org/aktivgraph/withTextProvider">with text provider</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">exactly</span> 1 <a href="#https://w3id.org/aktivgraph/TextProvider" title="https://w3id.org/aktivgraph/TextProvider">Text Provider</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/InterventionOption" title="https://w3id.org/aktivgraph/InterventionOption">Intervention Option</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/ReactiveDecisionPoint">
+      <h3>Reactive Decision Point<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/ReactiveDecisionPoint</p>
+      <div class="comment">
+         <span class="markdown">A decision point in response to an external signal detection</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/MessageBasedDecisionPoint"
+               title="https://w3id.org/aktivgraph/MessageBasedDecisionPoint">Message-Based Decision Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/SendPushMessage">
+      <h3>Send Push Messages<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/SendPushMessage</p>
+      <div class="comment">
+         <span class="markdown">Capability of a system to send push messages</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/ssn/systems/SystemCapability"
+               target="_blank"
+               title="http://www.w3.org/ns/ssn/systems/SystemCapability">system capability</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/Smartphone">
+      <h3>Smartpohone<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/Smartphone</p>
+      <div class="comment">
+         <span class="markdown">A smartphone is a personal wearable device capable of running applications and some amount of sensing</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/sosa/Platform"
+               target="_blank"
+               title="http://www.w3.org/ns/sosa/Platform">platform</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/SPARQLBindings">
+      <h3>SPARQL Bindings<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/SPARQLBindings</p>
+      <div class="comment">
+         <span class="markdown">A SPARQL query whose bindings are directly used as tailoring variables</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/TailoringVariables" title="https://w3id.org/aktivgraph/TailoringVariables">Tailoring Variables</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/bind" title="https://w3id.org/aktivgraph/bind">bind</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/aktivgraph/query" title="https://w3id.org/aktivgraph/query">query</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/TailoringVariables">
+      <h3>Tailoring Variables<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/TailoringVariables</p>
+      <div class="comment">
+         <span class="markdown">A set of variables whose value is used to determine which intervention option to choose and when to provide it</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/SPARQLBindings" title="https://w3id.org/aktivgraph/SPARQLBindings">SPARQL Bindings</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/requiresTailoringVariable"
+               title="https://w3id.org/aktivgraph/requiresTailoringVariable">tailoring variables</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/TextProvider">
+      <h3>Text Provider<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/TextProvider</p>
+      <div class="comment">
+         <span class="markdown">A decision rule that, after application, results in text</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/DecisionRule" title="https://w3id.org/aktivgraph/DecisionRule">Decision Rule</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/MapToTemplate" title="https://w3id.org/aktivgraph/MapToTemplate">Map To Template</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/withTextProvider" title="https://w3id.org/aktivgraph/withTextProvider">with text provider</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/VariableBinding">
+      <h3>Variable Binding<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/VariableBinding</p>
+      <div class="comment">
+         <span class="markdown">A variable binding of a SPARQL query</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/val" title="https://w3id.org/aktivgraph/val">Val</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://w3id.org/aktivgraph/var" title="https://w3id.org/aktivgraph/var">Var</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://w3id.org/aktivgraph/bind" title="https://w3id.org/aktivgraph/bind">bind</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/aktivgraph/assignedTo" title="https://w3id.org/aktivgraph/assignedTo">assigned to</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/bind" title="https://w3id.org/aktivgraph/bind">bind</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/hasDecisionRule" title="https://w3id.org/aktivgraph/hasDecisionRule">has decision rule</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/hasInterventionOption"
+            title="https://w3id.org/aktivgraph/hasInterventionOption">has intervention option</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/hasPeriod" title="https://w3id.org/aktivgraph/hasPeriod">has period</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/requiresActuatorCapability"
+            title="https://w3id.org/aktivgraph/requiresActuatorCapability">requires actuator capability</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/requiresTailoringVariable"
+            title="https://w3id.org/aktivgraph/requiresTailoringVariable">tailoring variables</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/withDecisionPoints" title="https://w3id.org/aktivgraph/withDecisionPoints">with decision points</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/withTextProvider" title="https://w3id.org/aktivgraph/withTextProvider">with text provider</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/aktivgraph/assignedTo">
+      <h3>assigned to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/assignedTo</p>
+      <div class="comment">
+         <span class="markdown">Indicates that a Platform (e.g. Smartphone) is used by a Patient</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> symmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/sosa/Platform"
+                  target="_blank"
+                  title="http://www.w3.org/ns/sosa/Platform">platform</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="https://schema.org/Patient"
+                  target="_blank"
+                  title="https://schema.org/Patient">patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/bind">
+      <h3>bind<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/bind</p>
+      <div class="comment">
+         <span class="markdown">Assign a variable bind to a SPARQL query</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/SPARQLBindings" title="https://w3id.org/aktivgraph/SPARQLBindings">SPARQL Bindings</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/VariableBinding" title="https://w3id.org/aktivgraph/VariableBinding">Variable Binding</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/hasDecisionRule">
+      <h3>has decision rule<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/hasDecisionRule</p>
+      <div class="comment">
+         <span class="markdown">The decision rule that is used to evaluate decision points</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/DecisionRule" title="https://w3id.org/aktivgraph/DecisionRule">Decision Rule</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/hasInterventionOption">
+      <h3>has intervention option<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/hasInterventionOption</p>
+      <div class="comment">
+         <span class="markdown">An intervention option available to this JITAI</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/InterventionOption" title="https://w3id.org/aktivgraph/InterventionOption">Intervention Option</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/hasPeriod">
+      <h3>has period<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/hasPeriod</p>
+      <div class="comment">
+         <span class="markdown">Period of a periodic decision point</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/PeriodicDecisionPoint"
+                  title="https://w3id.org/aktivgraph/PeriodicDecisionPoint">Periodic Decision Point</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2006/time#GeneralDateTimeDescription"
+                  target="_blank"
+                  title="http://www.w3.org/2006/time#GeneralDateTimeDescription">general date time description</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/requiresActuatorCapability">
+      <h3>requires actuator capability<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/requiresActuatorCapability</p>
+      <div class="comment">
+         <span class="markdown">actuator capability required by this intervention option</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/InterventionOption" title="https://w3id.org/aktivgraph/InterventionOption">Intervention Option</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/requiresTailoringVariable">
+      <h3>tailoring variables<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/requiresTailoringVariable</p>
+      <div class="comment">
+         <span class="markdown">A provider of tailoring variables</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/TailoringVariables" title="https://w3id.org/aktivgraph/TailoringVariables">Tailoring Variables</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/withDecisionPoints">
+      <h3>with decision points<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/withDecisionPoints</p>
+      <div class="comment">
+         <span class="markdown">This JITAI's type of decision points</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/JITAI" title="https://w3id.org/aktivgraph/JITAI">Just-In-Time Adaptive Intervention</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/DecisionPoint" title="https://w3id.org/aktivgraph/DecisionPoint">Decision Point</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/withTextProvider">
+      <h3>with text provider<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/withTextProvider</p>
+      <div class="comment">
+         <span class="markdown">The text provider for the inverntion option</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/InterventionOption" title="https://w3id.org/aktivgraph/InterventionOption">Intervention Option</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/TextProvider" title="https://w3id.org/aktivgraph/TextProvider">Text Provider</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/aktivgraph/query" title="https://w3id.org/aktivgraph/query">query</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/templateFilePath" title="https://w3id.org/aktivgraph/templateFilePath">template file path</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/val" title="https://w3id.org/aktivgraph/val">Val</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/aktivgraph/var" title="https://w3id.org/aktivgraph/var">Var</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/aktivgraph/query">
+      <h3>query<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/query</p>
+      <div class="comment">
+         <span class="markdown">The SPARQL query of a SPARQL binding</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/SPARQLBindings" title="https://w3id.org/aktivgraph/SPARQLBindings">SPARQL Bindings</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/templateFilePath">
+      <h3>template file path<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/templateFilePath</p>
+      <div class="comment">
+         <span class="markdown">For decision rules that are template-based, this is the file path that contains the template text</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/val">
+      <h3>Val<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/val</p>
+      <div class="comment">
+         <span class="markdown">The value of a binding</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/VariableBinding" title="https://w3id.org/aktivgraph/VariableBinding">Variable Binding</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/aktivgraph/var">
+      <h3>Var<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/var</p>
+      <div class="comment">
+         <span class="markdown">The variable name of a binding (use without leading ?)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/aktivgraph/VariableBinding" title="https://w3id.org/aktivgraph/VariableBinding">Variable Binding</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/aktivgraph/PHKG" title="https://w3id.org/aktivgraph/PHKG">PHKG Name Constant</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/aktivgraph/PHKG">
+      <h3>PHKG Name Constant<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aktivgraph/PHKG</p>
+      <div class="comment">
+         <span class="markdown">Cosntant representing the personal health knowledge graph name in variable bindings</span>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

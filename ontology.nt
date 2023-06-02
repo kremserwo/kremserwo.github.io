@@ -1,0 +1,299 @@
+<https://w3id.org/aktivgraph/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/aktivgraph/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/aktivgraph/1.0> .
+<https://w3id.org/aktivgraph/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time#2016> .
+<https://w3id.org/aktivgraph/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/ssn/systems/> .
+<https://w3id.org/aktivgraph/> <http://purl.org/dc/elements/1.1/creator> _:genid1 .
+<https://w3id.org/aktivgraph/> <http://purl.org/dc/elements/1.1/descritpion> "Aktivgraph is a vocabulary to describe entities of the Aktivgraph data model"@en .
+<https://w3id.org/aktivgraph/> <http://purl.org/dc/elements/1.1/title> "Aktivgraph Ontology"@en .
+<https://w3id.org/aktivgraph/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ag"@en .
+<https://w3id.org/aktivgraph/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/aktivgraph#" .
+<https://w3id.org/aktivgraph/> <http://www.w3.org/2000/01/rdf-schema#label> "Aktivgraph"@en .
+<https://w3id.org/aktivgraph/> <http://www.w3.org/2002/07/owl#versionInfo> "1.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/descritpion
+<http://purl.org/dc/elements/1.1/descritpion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2006/vcard/ns#fn
+<http://www.w3.org/2006/vcard/ns#fn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2006/vcard/ns#hasEmail
+<http://www.w3.org/2006/vcard/ns#hasEmail> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aktivgraph/assignedTo
+<https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/sosa/Platform> .
+<https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Patient> .
+<https://schema.org/Patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a Platform (e.g. Smartphone) is used by a Patient" .
+<https://w3id.org/aktivgraph/assignedTo> <http://www.w3.org/2000/01/rdf-schema#label> "assigned to" .
+# 
+# https://w3id.org/aktivgraph/bind
+<https://w3id.org/aktivgraph/bind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/bind> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/SPARQLBindings> .
+<https://w3id.org/aktivgraph/bind> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aktivgraph/VariableBinding> .
+<https://w3id.org/aktivgraph/bind> <http://www.w3.org/2000/01/rdf-schema#comment> "Assign a variable bind to a SPARQL query" .
+<https://w3id.org/aktivgraph/bind> <http://www.w3.org/2000/01/rdf-schema#label> "bind" .
+# 
+# https://w3id.org/aktivgraph/hasDecisionRule
+<https://w3id.org/aktivgraph/hasDecisionRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/hasDecisionRule> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/aktivgraph/hasDecisionRule> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/DecisionPoint> .
+<https://w3id.org/aktivgraph/hasDecisionRule> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aktivgraph/DecisionRule> .
+<https://w3id.org/aktivgraph/hasDecisionRule> <http://www.w3.org/2000/01/rdf-schema#comment> "The decision rule that is used to evaluate decision points" .
+<https://w3id.org/aktivgraph/hasDecisionRule> <http://www.w3.org/2000/01/rdf-schema#label> "has decision rule" .
+# 
+# https://w3id.org/aktivgraph/hasInterventionOption
+<https://w3id.org/aktivgraph/hasInterventionOption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/hasInterventionOption> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/aktivgraph/hasInterventionOption> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/DecisionPoint> .
+<https://w3id.org/aktivgraph/hasInterventionOption> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aktivgraph/InterventionOption> .
+<https://w3id.org/aktivgraph/hasInterventionOption> <http://www.w3.org/2000/01/rdf-schema#comment> "An intervention option available to this JITAI" .
+<https://w3id.org/aktivgraph/hasInterventionOption> <http://www.w3.org/2000/01/rdf-schema#label> "has intervention option" .
+# 
+# https://w3id.org/aktivgraph/hasPeriod
+<https://w3id.org/aktivgraph/hasPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/hasPeriod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/aktivgraph/hasPeriod> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/PeriodicDecisionPoint> .
+<https://w3id.org/aktivgraph/hasPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#GeneralDateTimeDescription> .
+<https://w3id.org/aktivgraph/hasPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "Period of a periodic decision point" .
+<https://w3id.org/aktivgraph/hasPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "has period" .
+# 
+# https://w3id.org/aktivgraph/requiresActuatorCapability
+<https://w3id.org/aktivgraph/requiresActuatorCapability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/requiresActuatorCapability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/InterventionOption> .
+<https://w3id.org/aktivgraph/requiresActuatorCapability> <http://www.w3.org/2000/01/rdf-schema#comment> "actuator capability required by this intervention option" .
+<https://w3id.org/aktivgraph/requiresActuatorCapability> <http://www.w3.org/2000/01/rdf-schema#label> "requires actuator capability" .
+# 
+# https://w3id.org/aktivgraph/requiresTailoringVariable
+<https://w3id.org/aktivgraph/requiresTailoringVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/requiresTailoringVariable> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/aktivgraph/requiresTailoringVariable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/DecisionPoint> .
+<https://w3id.org/aktivgraph/requiresTailoringVariable> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aktivgraph/TailoringVariables> .
+<https://w3id.org/aktivgraph/requiresTailoringVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "A provider of tailoring variables" .
+<https://w3id.org/aktivgraph/requiresTailoringVariable> <http://www.w3.org/2000/01/rdf-schema#label> "tailoring variables" .
+# 
+# https://w3id.org/aktivgraph/withDecisionPoints
+<https://w3id.org/aktivgraph/withDecisionPoints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/withDecisionPoints> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/JITAI> .
+<https://w3id.org/aktivgraph/withDecisionPoints> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aktivgraph/DecisionPoint> .
+<https://w3id.org/aktivgraph/withDecisionPoints> <http://www.w3.org/2000/01/rdf-schema#comment> "This JITAI's type of decision points" .
+<https://w3id.org/aktivgraph/withDecisionPoints> <http://www.w3.org/2000/01/rdf-schema#label> "with decision points" .
+# 
+# https://w3id.org/aktivgraph/withTextProvider
+<https://w3id.org/aktivgraph/withTextProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/aktivgraph/withTextProvider> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/aktivgraph/withTextProvider> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/InterventionOption> .
+<https://w3id.org/aktivgraph/withTextProvider> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/aktivgraph/TextProvider> .
+<https://w3id.org/aktivgraph/withTextProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "The text provider for the inverntion option" .
+<https://w3id.org/aktivgraph/withTextProvider> <http://www.w3.org/2000/01/rdf-schema#label> "with text provider" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aktivgraph/query
+<https://w3id.org/aktivgraph/query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aktivgraph/query> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/aktivgraph/query> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/SPARQLBindings> .
+<https://w3id.org/aktivgraph/query> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aktivgraph/query> <http://www.w3.org/2000/01/rdf-schema#comment> "The SPARQL query of a SPARQL binding" .
+<https://w3id.org/aktivgraph/query> <http://www.w3.org/2000/01/rdf-schema#label> "query" .
+# 
+# https://w3id.org/aktivgraph/templateFilePath
+<https://w3id.org/aktivgraph/templateFilePath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aktivgraph/templateFilePath> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aktivgraph/templateFilePath> <http://www.w3.org/2000/01/rdf-schema#comment> "For decision rules that are template-based, this is the file path that contains the template text" .
+<https://w3id.org/aktivgraph/templateFilePath> <http://www.w3.org/2000/01/rdf-schema#label> "template file path" .
+# 
+# https://w3id.org/aktivgraph/val
+<https://w3id.org/aktivgraph/val> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aktivgraph/val> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/VariableBinding> .
+<https://w3id.org/aktivgraph/val> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aktivgraph/val> <http://www.w3.org/2000/01/rdf-schema#comment> "The value of a binding" .
+<https://w3id.org/aktivgraph/val> <http://www.w3.org/2000/01/rdf-schema#label> "Val" .
+# 
+# https://w3id.org/aktivgraph/var
+<https://w3id.org/aktivgraph/var> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/aktivgraph/var> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/aktivgraph/var> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/aktivgraph/VariableBinding> .
+<https://w3id.org/aktivgraph/var> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/aktivgraph/var> <http://www.w3.org/2000/01/rdf-schema#comment> "The variable name of a binding (use without leading ?)" .
+<https://w3id.org/aktivgraph/var> <http://www.w3.org/2000/01/rdf-schema#label> "Var" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://schema.org/Patient
+# 
+# https://w3id.org/aktivgraph/Activity
+<https://w3id.org/aktivgraph/Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/Activity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#ProperInterval> .
+<https://w3id.org/aktivgraph/Activity> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity is a time interval of performed or planned, free or guided physical exercise" .
+<https://w3id.org/aktivgraph/Activity> <http://www.w3.org/2000/01/rdf-schema#label> "Activity" .
+# 
+# https://w3id.org/aktivgraph/DecisionPoint
+<https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/InterventionOption> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/hasInterventionOption> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/TailoringVariables> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/requiresTailoringVariable> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "A point in time where a JITAI system decides if and how it intervenes" .
+<https://w3id.org/aktivgraph/DecisionPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Decision Point" .
+# 
+# https://w3id.org/aktivgraph/DecisionRule
+<https://w3id.org/aktivgraph/DecisionRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/DecisionRule> <http://www.w3.org/2000/01/rdf-schema#comment> "A rule that connects tailoring variables to intervention options" .
+<https://w3id.org/aktivgraph/DecisionRule> <http://www.w3.org/2000/01/rdf-schema#label> "Decision Rule" .
+# 
+# https://w3id.org/aktivgraph/InterventionOption
+<https://w3id.org/aktivgraph/InterventionOption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/InterventionOption> <http://www.w3.org/2000/01/rdf-schema#comment> "A list of available intervention options" .
+<https://w3id.org/aktivgraph/InterventionOption> <http://www.w3.org/2000/01/rdf-schema#label> "Intervention Option" .
+# 
+# https://w3id.org/aktivgraph/JITAI
+<https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/DecisionPoint> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/withDecisionPoints> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/2000/01/rdf-schema#comment> "A class of mHealth invertentions that provide the right type/amount of support, at the right time." .
+<https://w3id.org/aktivgraph/JITAI> <http://www.w3.org/2000/01/rdf-schema#label> "Just-In-Time Adaptive Intervention" .
+# 
+# https://w3id.org/aktivgraph/MapToTemplate
+<https://w3id.org/aktivgraph/MapToTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/MapToTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/TextProvider> .
+<https://w3id.org/aktivgraph/MapToTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "A decision rule that maps the tailoring variables into a template. The variable names need to match between template and tailoring variable." .
+<https://w3id.org/aktivgraph/MapToTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "Map To Template" .
+# 
+# https://w3id.org/aktivgraph/MessageBasedDecisionPoint
+<https://w3id.org/aktivgraph/MessageBasedDecisionPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/MessageBasedDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/ReactiveDecisionPoint> .
+<https://w3id.org/aktivgraph/MessageBasedDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "A decision point that triggers on an incoming message" .
+<https://w3id.org/aktivgraph/MessageBasedDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Message-Based Decision Point" .
+# 
+# https://w3id.org/aktivgraph/PeriodicDecisionPoint
+<https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2006/time#GeneralDateTimeDescription> .
+_:genid5 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/hasPeriod> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/DecisionPoint> .
+<https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "A decision point that occurs periodically, i.e. at a fixed time interval" .
+<https://w3id.org/aktivgraph/PeriodicDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Periodic Decision Point" .
+# 
+# https://w3id.org/aktivgraph/PushMessage
+<https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/aktivgraph/SendPushMessage> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/requiresActuatorCapability> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/aktivgraph/TextProvider> .
+_:genid7 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/aktivgraph/withTextProvider> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/InterventionOption> .
+<https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2000/01/rdf-schema#comment> "Send a push message to the patient" .
+<https://w3id.org/aktivgraph/PushMessage> <http://www.w3.org/2000/01/rdf-schema#label> "Push Message" .
+# 
+# https://w3id.org/aktivgraph/ReactiveDecisionPoint
+<https://w3id.org/aktivgraph/ReactiveDecisionPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/ReactiveDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/DecisionPoint> .
+<https://w3id.org/aktivgraph/ReactiveDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "A decision point in response to an external signal detection" .
+<https://w3id.org/aktivgraph/ReactiveDecisionPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Reactive Decision Point" .
+# 
+# https://w3id.org/aktivgraph/SPARQLBindings
+<https://w3id.org/aktivgraph/SPARQLBindings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/SPARQLBindings> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/TailoringVariables> .
+<https://w3id.org/aktivgraph/SPARQLBindings> <http://www.w3.org/2000/01/rdf-schema#comment> "A SPARQL query whose bindings are directly used as tailoring variables" .
+<https://w3id.org/aktivgraph/SPARQLBindings> <http://www.w3.org/2000/01/rdf-schema#label> "SPARQL Bindings" .
+# 
+# https://w3id.org/aktivgraph/SendPushMessage
+<https://w3id.org/aktivgraph/SendPushMessage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/SendPushMessage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/systems/SystemCapability> .
+<https://w3id.org/aktivgraph/SendPushMessage> <http://www.w3.org/2000/01/rdf-schema#comment> "Capability of a system to send push messages" .
+<https://w3id.org/aktivgraph/SendPushMessage> <http://www.w3.org/2000/01/rdf-schema#label> "Send Push Messages" .
+# 
+# https://w3id.org/aktivgraph/Smartphone
+<https://w3id.org/aktivgraph/Smartphone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/Smartphone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Platform> .
+<https://w3id.org/aktivgraph/Smartphone> <http://www.w3.org/2000/01/rdf-schema#comment> "A smartphone is a personal wearable device capable of running applications and some amount of sensing" .
+<https://w3id.org/aktivgraph/Smartphone> <http://www.w3.org/2000/01/rdf-schema#label> "Smartpohone" .
+# 
+# https://w3id.org/aktivgraph/TailoringVariables
+<https://w3id.org/aktivgraph/TailoringVariables> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/TailoringVariables> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of variables whose value is used to determine which intervention option to choose and when to provide it" .
+<https://w3id.org/aktivgraph/TailoringVariables> <http://www.w3.org/2000/01/rdf-schema#label> "Tailoring Variables" .
+# 
+# https://w3id.org/aktivgraph/TextProvider
+<https://w3id.org/aktivgraph/TextProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/TextProvider> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/aktivgraph/DecisionRule> .
+<https://w3id.org/aktivgraph/TextProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A decision rule that, after application, results in text" .
+<https://w3id.org/aktivgraph/TextProvider> <http://www.w3.org/2000/01/rdf-schema#label> "Text Provider" .
+# 
+# https://w3id.org/aktivgraph/VariableBinding
+<https://w3id.org/aktivgraph/VariableBinding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/aktivgraph/VariableBinding> <http://www.w3.org/2000/01/rdf-schema#comment> "A variable binding of a SPARQL query" .
+<https://w3id.org/aktivgraph/VariableBinding> <http://www.w3.org/2000/01/rdf-schema#label> "Variable Binding" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/aktivgraph/PHKG
+<https://w3id.org/aktivgraph/PHKG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/aktivgraph/PHKG> <http://www.w3.org/2000/01/rdf-schema#comment> "Cosntant representing the personal health knowledge graph name in variable bindings" .
+<https://w3id.org/aktivgraph/PHKG> <http://www.w3.org/2000/01/rdf-schema#label> "PHKG Name Constant" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
